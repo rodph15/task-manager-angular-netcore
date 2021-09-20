@@ -17,5 +17,7 @@ namespace TaskManager.Service.Interfaces
         Task<TaskEntity> FindTaskByName(string taskName);
 
         Task<IEnumerable<TaskEntity>> GetAll();
+
+        Task<TaskEntity> ValidateTask(string taskName);
     }
 }

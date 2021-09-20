@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.Service", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.CrossCutting.IoC", "src\TaskManager.CrossCutting.IoC\TaskManager.CrossCutting.IoC.csproj", "{BDEBA0B0-4661-4B41-9097-95ED316462DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.CrossCutting.Logging", "src\TaskManager.CrossCutting.Logging\TaskManager.CrossCutting.Logging.csproj", "{C06AB88C-B216-4361-A906-B9E1CF2F87B2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.Domain", "src\TaskManager.Domain\TaskManager.Domain.csproj", "{D32A391E-F339-449D-81EA-8A9E45BDBA63}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.Api.Tests", "tests\TaskManager.Api.Tests\TaskManager.Api.Tests.csproj", "{C0E21FF8-0619-4CEA-9825-5E358AFAF0E6}"
@@ -25,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.CrossCutting.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.CrossCutting.Configuration.Tests", "tests\TaskManager.CrossCutting.Configuration.Tests\TaskManager.CrossCutting.Configuration.Tests.csproj", "{0BCF56EA-94B9-428B-B4F2-4F2293433406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.CrossCutting.ExceptionManager", "src\TaskManager.CrossCutting.ExceptionManager\TaskManager.CrossCutting.ExceptionManager.csproj", "{B63E11EF-B391-4B65-B18A-F35669D3A381}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.CrossCutting.ExceptionManager", "src\TaskManager.CrossCutting.ExceptionManager\TaskManager.CrossCutting.ExceptionManager.csproj", "{B63E11EF-B391-4B65-B18A-F35669D3A381}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +43,6 @@ Global
 		{BDEBA0B0-4661-4B41-9097-95ED316462DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDEBA0B0-4661-4B41-9097-95ED316462DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDEBA0B0-4661-4B41-9097-95ED316462DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C06AB88C-B216-4361-A906-B9E1CF2F87B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C06AB88C-B216-4361-A906-B9E1CF2F87B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C06AB88C-B216-4361-A906-B9E1CF2F87B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C06AB88C-B216-4361-A906-B9E1CF2F87B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D32A391E-F339-449D-81EA-8A9E45BDBA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D32A391E-F339-449D-81EA-8A9E45BDBA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32A391E-F339-449D-81EA-8A9E45BDBA63}.Release|Any CPU.ActiveCfg = Release|Any CPU

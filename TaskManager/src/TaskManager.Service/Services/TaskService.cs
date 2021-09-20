@@ -59,7 +59,7 @@ namespace TaskManager.Service.Services
             return $"The task {taskDto.Name} has been updated";
         }
 
-        private async Task<TaskEntity> ValidateTask(string taskName)
+        public async Task<TaskEntity> ValidateTask(string taskName)
         {
             if (await Task.Run(() => _taskRepository.GetAll()) == null)
                 throw new TaskNotFoundException();
