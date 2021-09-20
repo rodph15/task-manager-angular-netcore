@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,30 @@ namespace TaskManager.Api.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var (message, saved) = await _taskService.CreateTask(taskDto);
+                    var (message, task) = await _taskService.CreateTask(taskDto);
+
+                    return Created(message, task);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateTask(TaskDto taskDto)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var message = await _taskService.UpdateTask(taskDto);
 
                     return Ok(message);
                 }
@@ -39,7 +63,53 @@ namespace TaskManager.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete("{name}")]
+        public async Task<IActionResult> DeleteTask(string name)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var message = await _taskService.DeleteTask(name);
+
+                    return Ok(message);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetTask(string name)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _taskService.FindTaskByName(name);
+
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -62,7 +132,7 @@ namespace TaskManager.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

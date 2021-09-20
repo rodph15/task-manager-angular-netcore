@@ -28,7 +28,15 @@ namespace TaskManager.Infrastructure.Repositories
             _cacheManagerFactory.GetCacheManager().Put("TaskList", tasks);
 
         }
-        public void Update(IEnumerable<TEntity> entityList) => _cacheManagerFactory.GetCacheManager().Put("TaskList", entityList);
+        public void Update(TEntity entity, Func<TEntity, bool> where)
+        {
+            var tasks = _cacheManagerFactory.GetCacheManager().Get("TaskList") as List<TEntity>;
+
+            tasks.Remove(tasks.Where(where).First());
+            tasks.Add(entity);
+
+            _cacheManagerFactory.GetCacheManager().Put("TaskList", tasks);
+        }
         public void Delete(Func<TEntity, bool> where)
         {
             var tasks = _cacheManagerFactory.GetCacheManager().Get("TaskList") as List<TEntity>;
@@ -36,6 +44,13 @@ namespace TaskManager.Infrastructure.Repositories
             tasks.Remove(tasks.Where(where).First());
 
             _cacheManagerFactory.GetCacheManager().Put("TaskList", tasks);
+        }
+
+        public TEntity Find(Func<TEntity, bool> where)
+        {
+            var tasks = _cacheManagerFactory.GetCacheManager().Get("TaskList") as List<TEntity>;
+
+            return tasks.Where(where).FirstOrDefault();
         }
         public IEnumerable<TEntity> GetAll() => _cacheManagerFactory.GetCacheManager().Get("TaskList") as List<TEntity>;
 
