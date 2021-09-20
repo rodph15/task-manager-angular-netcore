@@ -1,0 +1,30 @@
+<div class="mdc-drawer__content" >
+
+
+  <div class="mdc-list-group" style="overflow-y: auto;position: relative;height: 810px;">
+    <nav class="mdc-list mdc-drawer-menu">
+      <div class="mdc-list-item mdc-drawer-item" tabindex="-1">
+        <a class="mdc-expansion-panel-link" data-toggle="expansionPanel" data-target="ui-sub-menu-task">
+          <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">public</i>
+          Task
+          <i class="mdc-drawer-arrow material-icons">chevron_right</i>
+        </a>
+        <div class="mdc-expansion-panel" id="ui-sub-menu-task">
+          <nav class="mdc-list mdc-drawer-submenu">
+            <div  class="mdc-list-item mdc-drawer-item" tabindex="-1">
+              <a routerLink="/list" routerLinkActive="active" class="mdc-drawer-link" href="#" tabindex="-1">
+                List
+              </a>
+            </div>
+            <div  class="mdc-list-item mdc-drawer-item" tabindex="-1">
+              <a routerLink="/create" class="mdc-drawer-link" href="#" tabindex="-1">
+                Create
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+</div>

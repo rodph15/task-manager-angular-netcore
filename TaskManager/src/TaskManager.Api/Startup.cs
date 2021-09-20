@@ -53,6 +53,8 @@ namespace TaskManager.Api
 
             app.UseAuthorization();
 
+            app.UseCors("AllowAll");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

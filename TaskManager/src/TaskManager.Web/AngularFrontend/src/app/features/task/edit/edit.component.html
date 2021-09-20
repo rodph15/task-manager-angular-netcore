@@ -1,0 +1,59 @@
+<button routerLink="/list"  class="mdc-button mdc-button--raised filled-button--success mdc-ripple-upgraded" style="--mdc-ripple-fg-size:56px; --mdc-ripple-fg-scale:1.96936; --mdc-ripple-fg-translate-start:24.9125px, 1px; --mdc-ripple-fg-translate-end:18.8px, -10px;">
+  List
+</button>
+
+<div class="mdc-layout-grid__cell--span-12" style="margin-top: 30px;">
+  <div class="mdc-card">
+    <h6 class="card-title">Create Task</h6>
+    <div class="template-demo">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+          <div class="mdc-text-field mdc-text-field--outlined">
+            <input class="mdc-text-field__input" id="text-field-hero-input" placeholder="Name" [(ngModel)]="task.name"
+            name="name">
+            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <label for="text-field-hero-input" class="mdc-floating-label" *ngIf="task.name == ''">Name</label>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+          <div class="mdc-text-field mdc-text-field--outlined">
+            <input class="mdc-text-field__input" id="text-field-hero-input" type="number" [(ngModel)]="task.priority"
+            name="priority">
+            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <label for="text-field-hero-input" class="mdc-floating-label" style="padding-left: 30px;" >Priority</label>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+          <div class="mdc-text-field mdc-text-field--outlined">
+            <select class="mdc-text-field__select" id="text-field-hero-select" type="number" [(ngModel)]="task.status" style="width: 100%;"
+            name="status">
+            <option [ngValue]="1" selected>Not Started</option>
+            <option [ngValue]="2">In Progress</option>
+            <option [ngValue]="3">Completed</option>
+            </select>
+            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <button #btnSave (click)="UpdateTask(btnSave)" [disabled]="task.name == '' ? true : false" class="mdc-button mdc-button--raised filled-button--success mdc-ripple-upgraded" style="--mdc-ripple-fg-size:56px; --mdc-ripple-fg-scale:1.96936; --mdc-ripple-fg-translate-start:24.9125px, 1px; --mdc-ripple-fg-translate-end:18.8px, -10px;">
+      Save
+    </button>
+  </div>
+</div>
